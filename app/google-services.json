@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "346777637669",
+    "project_id": "location-tracking-51709",
+    "storage_bucket": "location-tracking-51709.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346777637669:android:4bbb8fce149f68693cc0cc",
+        "android_client_info": {
+          "package_name": "com.waseem.locationtracking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2PYeV515w_wSDQW3dYklPpJGu1XDWmf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

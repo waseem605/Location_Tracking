@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Location Tracking</string>
+    
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="allow_permissions">Allow Permissions</string>
+
+    <string name="permission_rationale">Location Permission is needed for core functionality</string>
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core functionality.</string>
+    <string name="settings">Settings</string>
+    <string name="request_for_battery_optimization">Request for Battery Optimization</string>
+    <string name="battery_optimization_description">Please allow battery optimization adjustments for our location tracking application. dlivrd app relies on efficient background processes to deliver real-time location information, and these optimizations are essential to maintain its performance.</string>
+    <string name="allow">Allow</string>
+    <string name="permission_descriptions">To ensure you have a perfect experience, please update the settings below. As you complete each, please navigate back to the LocationTracking app.</string>
+    <string name="background_permission_granted">Background Location Permission Granted</string>
+    <string name="permissions_denied">Permissions denied</string>
+    <string name="notification_permission">Notification Permission</string>
+    <string name="notification_permission_granted">Notification Permission Granted</string>
+    <string name="permission_granted">Permission Granted</string>
+    <string name="notification_permission_required">Notification permission is required, Please allow Notification Permission from setting</string>
+    <string name="enable_notifications_to_stay_updated">Enable notifications to stay updated with the latest alerts and updates directly on your device.</string>
+    <string name="enable_do_not_disturb">Enable Do not disturb</string>
+    <string name="allow_us_to_enable_do_not_disturb_mode">Allow us to enable Do Not Disturb mode to minimize interruptions during important times.</string>
+    <string name="overlay_permission">Overlay Permission</string>
+    <string name="allow_us_to_display_helpful_information_and">Allow us to display helpful information and controls over other apps for a seamless experience.</string>
+    <string name="location_permission">Location Permission</string>
+    <string name="enable_location_access_to_provide_personalized_services">Enable location access to provide personalized services and accurate location-based features.</string>
+    <string name="battery_optimization">Battery Optimization</string>
+    <string name="please_allow_battery_optimization_adjustments">Please allow battery optimization adjustments for our location tracking application.</string>
+    <string name="continue_tx">Continue</string>
+    <string name="this_app_needs_the_location_permission_please">This app needs the Location Permission, please accept to use location functionality</string>
+    <string name="mock_location_alert">Mock Location Alert</string>
+    <string name="mock_location_is_detected_desc">Mock location is detected. Please turn off mock location for the app to work correctly.</string>
+    <string name="no_internet_available">No Internet Available</string>
+    <string name="allow_all_the_time">Please ensure your Location Permissions have been set to <b>"Allow all the time"</b></string>
+    <string name="the_app_needs_overlay_permission">The LocationTracking app needs Overlay\n Permission to provide the \nfeature to Tracking Notifications</string>
+
+    <string name="ok_text">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="alert">Alert</string>
+
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="unauthorized_user">Unauthorized user</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account">Don’t have an account? Register</string>
+    <string name="enter_username">Please enter your username</string>
+    <string name="enter_password">Please enter password</string>
+    <string name="password_too_short">Password is too short</string>
+    <string name="internet_not_available">Please connect to the internet</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="location_is_tracking">Location is Tracking</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logout">Logout</string>
+</resources>

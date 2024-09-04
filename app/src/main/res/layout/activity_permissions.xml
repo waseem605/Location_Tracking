@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PermissionsActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:text="@string/allow_permissions"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/continueBtn"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/startGuide"
+                app:layout_constraintGuide_percent="0.22"
+                android:orientation="vertical"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/EndGuide"
+                app:layout_constraintGuide_percent="0.78"
+                android:orientation="vertical"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/EndGuideBottom"
+                app:layout_constraintGuide_percent="0.25"
+                android:orientation="horizontal"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iconPermission"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:src="@drawable/icon_permission"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintBottom_toBottomOf="@id/EndGuideBottom"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/disc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="@string/permission_descriptions"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintTop_toBottomOf="@id/iconPermission"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notificationOnLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/curved_corner_green_bg"
+                android:backgroundTint="@color/lightGray"
+                android:padding="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/disc">
+
+                <TextView
+                    android:id="@+id/notifyOnOffTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="start|center"
+                    android:text="@string/notification_permission"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/notificationSwitch"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/notifyDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="-5dp"
+                    android:gravity="start|center"
+                    android:text="@string/enable_notifications_to_stay_updated"
+                    android:textColor="@color/fine_grey"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/notificationSwitch"
+                    app:layout_constraintTop_toBottomOf="@id/notifyOnOffTv" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/notificationSwitch"
+                    android:layout_width="51dp"
+                    android:layout_height="31dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:sb_checked="false"
+                    app:sb_show_indicator="false" />
+
+                <View
+                    android:id="@+id/notificationButton"
+                    android:layout_width="51dp"
+                    android:layout_height="41dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/doNotDisturbLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/curved_corner_green_bg"
+                android:backgroundTint="@color/lightGray"
+                android:padding="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/notificationOnLayout">
+
+                <TextView
+                    android:id="@+id/disturbTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="start|center"
+                    android:text="@string/enable_do_not_disturb"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/doNotDisturbSwitch"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="-5dp"
+                    android:gravity="start|center"
+                    android:text="@string/allow_us_to_enable_do_not_disturb_mode"
+                    android:textColor="@color/fine_grey"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/doNotDisturbSwitch"
+                    app:layout_constraintTop_toBottomOf="@id/disturbTitle" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/doNotDisturbSwitch"
+                    android:layout_width="51dp"
+                    android:layout_height="31dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:sb_checked="false"
+                    app:sb_show_indicator="false" />
+
+                <View
+                    android:id="@+id/doNotDisturbButton"
+                    android:layout_width="51dp"
+                    android:layout_height="41dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/overLayLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/curved_corner_green_bg"
+                android:backgroundTint="@color/lightGray"
+                android:padding="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/notificationOnLayout">
+
+                <TextView
+                    android:id="@+id/overlayTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="start|center"
+                    android:text="@string/overlay_permission"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/overlaySwitch"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="-5dp"
+                    android:gravity="start|center"
+                    android:text="@string/allow_us_to_display_helpful_information_and"
+                    android:textColor="@color/fine_grey"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/overlaySwitch"
+                    app:layout_constraintTop_toBottomOf="@id/overlayTitle" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/overlaySwitch"
+                    android:layout_width="51dp"
+                    android:layout_height="31dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:sb_checked="false"
+                    app:sb_show_indicator="false" />
+
+                <View
+                    android:id="@+id/overLeyButton"
+                    android:layout_width="51dp"
+                    android:layout_height="41dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/batteryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/curved_corner_green_bg"
+                android:backgroundTint="@color/lightGray"
+                android:padding="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/overLayLayout">
+
+                <TextView
+                    android:id="@+id/batteryTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="start|center"
+                    android:text="@string/battery_optimization"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/batteryOptimizationSwitch"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="-5dp"
+                    android:gravity="start|center"
+                    android:text="@string/please_allow_battery_optimization_adjustments"
+                    android:textColor="@color/fine_grey"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/batteryOptimizationSwitch"
+                    app:layout_constraintTop_toBottomOf="@id/batteryTitle" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/batteryOptimizationSwitch"
+                    android:layout_width="51dp"
+                    android:layout_height="31dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:sb_checked="false"
+                    app:sb_show_indicator="false" />
+
+                <View
+                    android:id="@+id/batteryOptButton"
+                    android:layout_width="51dp"
+                    android:layout_height="41dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/locationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/curved_corner_green_bg"
+                android:backgroundTint="@color/lightGray"
+                android:padding="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/batteryLayout">
+
+
+                <TextView
+                    android:id="@+id/locationTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="start|center"
+                    android:text="@string/location_permission"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/locationSwitch"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="-5dp"
+                    android:gravity="start|center"
+                    android:text="@string/enable_location_access_to_provide_personalized_services"
+                    android:textColor="@color/fine_grey"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/locationSwitch"
+                    app:layout_constraintTop_toBottomOf="@id/locationTitle" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/locationSwitch"
+                    android:layout_width="51dp"
+                    android:layout_height="31dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:sb_checked="false"
+                    app:sb_show_indicator="false" />
+
+                <View
+                    android:id="@+id/locationButton"
+                    android:layout_width="51dp"
+                    android:layout_height="41dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@id/locationLayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:backgroundTint="@color/primary_color"
+        android:elevation="2dp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_6sdp"
+        android:stateListAnimator="@null"
+        android:text="@string/continue_tx"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:cornerRadius="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
